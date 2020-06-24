@@ -104,7 +104,7 @@ aldex.clr.function <- function( reads, conds, mc.samples=128, denom="all", verbo
 
 
     #  SANITY CHECKS ON THE DATA INPUT
-    if ( any( round(reads) != reads ) ) stop("not all reads are integers")
+    if ( any( round(reads) != reads ) ) message("not all reads are integers")
     if ( any( reads < 0 ) )             stop("one or more reads are negative")
 
     for ( col in names(reads) ) {
