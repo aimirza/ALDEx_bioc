@@ -168,18 +168,6 @@ if (verbose == TRUE) message("data format is OK")
 
 if (verbose == TRUE) message("dirichlet samples complete")
 
-  # --------------------------------------------------------------------
-  # For each mc instance, divide the denom such that it is smaller than any value in the column
-	  if (noNeg){
-    p <- lapply(p, function(x){  
-      
-      mins <- apply(x[-denom,], 2, min)
-      minOfMins <- min(mins/ x[denom,])
-      x[denom,] <- as.numeric(test[denom,]) * minOfMins * .9
-    })
-    
-  }
-
     # ---------------------------------------------------------------------
     # Take the log2 of the frequency and subtract the geometric mean log2 frequency per sample
     # i.e., do a centered logratio transformation as per Aitchison
