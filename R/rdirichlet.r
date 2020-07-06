@@ -5,7 +5,7 @@ aitchison.mean <- function( n, log=FALSE ) {
     # If log-frequencies are requested, the uninformative subspace is removed.
 
     n <- round( as.vector( n, mode="numeric" ) )
-    if ( any( n < 0 ) ) stop("counts cannot be negative")
+    #if ( any( n < 0 ) ) stop("counts cannot be negative")
 
     a <- n + 0.5
     sa <- sum(a)
