@@ -175,8 +175,8 @@ if (verbose == TRUE) message("group summaries calculated")
     if(CI == FALSE) {
       effect  <- t(apply( l2d$effect, 1, median ))
     } else {
-      effectlow <- t(apply( l2d$effect, 1, function(x) quantile(x, probs=0.025, names=FALSE) ))
-      effecthigh <- t(apply( l2d$effect, 1, function(x) quantile(x, probs=0.975, names=FALSE) ))
+      effectlow <- t(apply( l2d$effect, 1, function(x) quantile(x, probs=0.025, names=FALSE, na.rm = TRUE) ))
+      effecthigh <- t(apply( l2d$effect, 1, function(x) quantile(x, probs=0.975, names=FALSE, na.rm = TRUE) ))
       effect  <- t(apply( l2d$effect, 1, median ))
     }
     overlap <- apply( l2d$effect, 1, function(row) { min( aitchison.mean( c( sum( row < 0 ) , sum( row > 0 ) ) + 0.5 ) ) } )
