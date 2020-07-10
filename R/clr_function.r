@@ -129,7 +129,7 @@ aldex.clr.function <- function( reads, conds, mc.samples=128, denom="all", verbo
 
     if ( length(feature.subset[[1]]) == 0 ) stop("No low variance, high abundance features in common between conditions\nPlease choose another denomiator.")
 
-    reads <- reads + prior
+    #reads <- reads + prior
 
 if (verbose == TRUE) message("data format is OK")
 
